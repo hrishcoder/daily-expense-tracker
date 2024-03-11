@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Daily report - Your Site Title{% endblock %}
+
+{% block content %}
+
+    <h1>Financial Report</h1>
+    <form method="post" action="{% url 'daily_report_result' %}">
+        {% csrf_token %}
+
+        <button class="btn btn-success" id="generateButton">Generate Report</button>
+    </form>
+    {% if food_total is not None %}
+    <p>Food Total: ${{ food_total }}</p>
+    <p>Rent Total: ${{ rent_total }}</p>
+    <p>Entertainment Total: ${{ entertainment_total }}</p>
+    {% endif %}
+    
+   
+
+
+<!-- Add your home page content here -->
+{% endblock %}

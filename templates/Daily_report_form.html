@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}daily_report - Your Site Title{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Expense Tracker</h2>
+    <form method="post" action="/Daily report form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="food">Food Expense:</label>
+            <input type="number" class="form-control" id="food" name="food" placeholder="Enter food expense">
+        </div>
+        <div class="form-group">
+            <label for="rent">Rent Expense:</label>
+            <input type="number" class="form-control" id="rent" name="rent" placeholder="Enter rent expense">
+        </div>
+        <div class="form-group">
+            <label for="entertainment">Entertainment Expense:</label>
+            <input type="number" class="form-control" id="entertainment" name="entertainment" placeholder="Enter entertainment expense">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
